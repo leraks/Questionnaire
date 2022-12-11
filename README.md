@@ -28,11 +28,11 @@ python manage.py runserver <br>
 
 
 # Task :
-Web application for managing a database of bonus cards (loyalty cards, credit cards, etc. I have met many variations). List of fields: card series, card number, card issue date, end date of card activity, date of use, amount, card status (not activated/activated/expired).
+A simple service for conducting testing on any topics. I.e. there are tests with answer options, one or more options must be correct. The tests are grouped into test suites, which the user can then pass and see his result.
 
-The functionality of the application is a list of cards with fields: series, number, release date, end date of activity, status search for the same fields viewing the profile of the card with the purchase history of it activating/deactivating the card deleting the card
+Functional parts of the service:
 
-Implement a card generator, indicating the series and number of generated cards, as well as the "end date of activity" with the values "1 year", "6 months" and "1 month".
+User Registration, User Authentication, Registered users can pass any of the test suites
 
 # Task Ru
 
