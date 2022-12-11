@@ -1,0 +1,21 @@
+{% extends 'core/basic_in_core.html' %}
+
+{% block content %}
+
+    <div class="main">
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <h1>Тест - {{test.title}}</h1>
+                <hr>
+                <form action="{% url 'solution' test.pk %}" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

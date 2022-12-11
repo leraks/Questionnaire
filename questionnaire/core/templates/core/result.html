@@ -1,0 +1,23 @@
+{% extends 'core/basic_in_core.html' %}
+
+{% block content %}
+
+    <div class="main">
+
+        <div class="container">
+
+            <div class="row g-md-5 pb-md-5 mb-5 align-items-center">
+
+                <h1>Название Теста: {{result.test.title}}</h1>
+                <h1>Пользователь {{request.user}}</h1>
+                <h1>Ваше кол-во правильных ответов: {{result.Number_of_correct_answers}}</h1>
+                <h1>Ващ результат в процентах: {{сorrect_percentage}}%</h1>
+                <h1>Статус теста: {{result.status}}</h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

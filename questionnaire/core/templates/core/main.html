@@ -1,0 +1,50 @@
+{% extends 'core/basic_in_core.html' %}
+
+{% block content %}
+    <div class="main">
+
+        <div class="p-2 border rounded-3 mb-4">
+            <ul class="nav nav-pills mb-4" id="pillNav" role="tablist">
+                {% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for test in tests %}
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <h1>{{test.title}}</h1>
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    <div class="card-body">
+                      <p class="card-text">{{test.description_mini}}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                          {%if test in profile%}
+                            <a href="{% url 'result' test.title %}">Смотреть результат</a>
+                          {%else%}
+                            <a href="{% url 'solution' test.pk %}">Приступить к решению</a>
+                          {%endif%}
+                        <small class="text-muted">{{test.pub_date}}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+
+    </div>
+{% endblock %}
